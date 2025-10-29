@@ -5,7 +5,7 @@ class ShortCode
     def self.encode(number)
         return ALPHABET.first if number.zero? || number.nil?
         result =""
-        while number >0 do
+        while number > 0 do
             index = number % BASE
             char = ALPHABET[index]
             result.prepend char
@@ -15,5 +15,14 @@ class ShortCode
     end
 
     def self.decode(string)
+        number = 0
+
+        string.reverse.each_char.with_index do |char, index|
+            power  = BASE ** index
+            index = ALPHABET.index(char)
+            number += index * power
+        end
+        number
     end
+
 end
