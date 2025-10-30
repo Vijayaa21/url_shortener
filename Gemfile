@@ -63,3 +63,6 @@ group :test do
 end
 
 gem "cssbundling-rails", "~> 1.4"
+
+gem "chartkick", "~> 5.2"
+gem "groupdate", "~> 6.7"
